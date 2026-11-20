@@ -1,0 +1,328 @@
+import type { WorkforceAgent } from "./types";
+
+export const agentDemoData: WorkforceAgent[] = [
+  {
+    id: "agent-atlas",
+    name: "Atlas Research Assistant",
+    initials: "AR",
+    responsibility: "Vendor research and coordination",
+    framework: { name: "OpenClaw", version: "2.4" },
+    model: { name: "Claude Sonnet 4", provider: "Anthropic" },
+    deployment: {
+      environment: "Customer-managed container",
+      location: "US West",
+      ownership: "customer-managed",
+    },
+    connectivity: "connected",
+    executionState: "running",
+    availability: "busy",
+    currentTask: "Compare current vendor options",
+    lastHeartbeat: "2 minutes ago",
+    registeredAt: "Sep 8, 2026",
+    capabilityReport: {
+      status: "reported",
+      capabilities: ["Research", "Document summarization"],
+      supportedOperations: ["Claim assigned task", "Submit task result"],
+      tools: ["Web search", "Document reader"],
+    },
+    integrationMetadata: {
+      name: "Workspace bridge",
+      version: "2.1",
+      connectionMethod: "Customer-configured endpoint",
+      details: ["Metadata reported by the connected integration"],
+    },
+    activity: [
+      {
+        id: "atlas-activity-1",
+        type: "execution",
+        summary: "Started “Compare current vendor options”",
+        occurredAt: "4 minutes ago",
+      },
+      {
+        id: "atlas-activity-2",
+        type: "connectivity",
+        summary: "Heartbeat received",
+        occurredAt: "2 minutes ago",
+      },
+      {
+        id: "atlas-activity-3",
+        type: "execution",
+        summary: "Submitted vendor shortlist for review",
+        occurredAt: "Yesterday",
+      },
+    ],
+    executions: [
+      {
+        id: "EXE-2048",
+        taskName: "Compare current vendor options",
+        status: "running",
+        duration: "12 min",
+      },
+      {
+        id: "EXE-2033",
+        taskName: "Summarize vendor security notes",
+        status: "completed",
+        duration: "18 min",
+      },
+    ],
+    usage: {
+      period: "Nov 1–18, 2026",
+      estimatedTokens: 462_000,
+      estimatedCost: 8.42,
+    },
+    permissions: {
+      status: "reported",
+      overview:
+        "Demonstration access is limited to assigned work and reported integration scopes.",
+      grantedCapabilities: ["Read assigned task context", "Submit task results"],
+      restrictedOperations: ["Manage organization members", "Change workspace settings"],
+    },
+  },
+  {
+    id: "agent-hermes",
+    name: "Hermes Support Analyst",
+    initials: "HS",
+    responsibility: "Support request summarization",
+    framework: { name: "Hermes" },
+    model: { name: "GPT-4.1 mini", provider: "OpenAI" },
+    deployment: {
+      environment: "Customer-managed virtual machine",
+      location: "EU Central",
+      ownership: "customer-managed",
+    },
+    connectivity: "connected",
+    executionState: "running",
+    availability: "busy",
+    currentTask: "Triage the latest support summaries",
+    lastHeartbeat: "4 minutes ago",
+    registeredAt: "Oct 2, 2026",
+    capabilityReport: {
+      status: "reported",
+      capabilities: ["Text classification", "Summarization"],
+      supportedOperations: ["Claim assigned task", "Submit task result"],
+      tools: ["Ticket search", "Knowledge base lookup"],
+    },
+    integrationMetadata: {
+      name: "Task relay",
+      connectionMethod: "Customer-managed relay",
+    },
+    activity: [
+      {
+        id: "hermes-activity-1",
+        type: "execution",
+        summary: "Claimed “Triage the latest support summaries”",
+        occurredAt: "12 minutes ago",
+      },
+      {
+        id: "hermes-activity-2",
+        type: "connectivity",
+        summary: "Heartbeat received",
+        occurredAt: "4 minutes ago",
+      },
+      {
+        id: "hermes-activity-3",
+        type: "execution",
+        summary: "Completed a support summary",
+        occurredAt: "1 hour ago",
+      },
+    ],
+    executions: [
+      {
+        id: "EXE-2046",
+        taskName: "Triage the latest support summaries",
+        status: "running",
+        duration: "8 min",
+      },
+      {
+        id: "EXE-2018",
+        taskName: "Summarize onboarding feedback",
+        status: "completed",
+        duration: "11 min",
+      },
+    ],
+    usage: {
+      period: "Nov 1–18, 2026",
+      estimatedTokens: 318_000,
+      estimatedCost: 3.16,
+    },
+    permissions: {
+      status: "reported",
+      overview:
+        "Demonstration access is limited to assigned work and reported integration scopes.",
+      grantedCapabilities: ["Read assigned task context", "Submit task results"],
+      restrictedOperations: ["Send customer messages", "Change workspace settings"],
+    },
+  },
+  {
+    id: "agent-juniper",
+    name: "Juniper QA Agent",
+    initials: "JQ",
+    responsibility: "Release and quality checks",
+    framework: { name: "LangGraph" },
+    deployment: {
+      environment: "Customer-managed Kubernetes",
+      ownership: "customer-managed",
+    },
+    connectivity: "degraded",
+    executionState: "waiting",
+    availability: "unavailable",
+    currentTask: "Verify recent deployment checks",
+    lastHeartbeat: "13 minutes ago",
+    registeredAt: "Aug 19, 2026",
+    capabilityReport: {
+      status: "unverified",
+      capabilities: ["Release verification"],
+      supportedOperations: ["Submit task result"],
+    },
+    integrationMetadata: {
+      name: "Agent connector",
+      details: ["Some integration metadata has not been reported"],
+    },
+    activity: [
+      {
+        id: "juniper-activity-1",
+        type: "warning",
+        summary: "Connectivity telemetry is delayed",
+        occurredAt: "13 minutes ago",
+      },
+      {
+        id: "juniper-activity-2",
+        type: "execution",
+        summary: "Waiting on deployment check results",
+        occurredAt: "22 minutes ago",
+      },
+      {
+        id: "juniper-activity-3",
+        type: "connectivity",
+        summary: "Connection entered degraded state",
+        occurredAt: "34 minutes ago",
+      },
+    ],
+    executions: [
+      {
+        id: "EXE-2041",
+        taskName: "Verify recent deployment checks",
+        status: "waiting",
+        duration: "22 min",
+      },
+      {
+        id: "EXE-1984",
+        taskName: "Review pre-release test output",
+        status: "failed",
+        duration: "9 min",
+      },
+    ],
+    usage: {
+      period: "Nov 1–18, 2026",
+      estimatedTokens: 126_000,
+    },
+    permissions: {
+      status: "reported",
+      overview: "Reported access is awaiting verification in this demonstration.",
+      grantedCapabilities: ["Submit task results"],
+      restrictedOperations: ["Change deployment configuration"],
+    },
+  },
+  {
+    id: "agent-sync",
+    name: "Internal Sync Worker",
+    initials: "IS",
+    responsibility: "Customer-owned data synchronization",
+    framework: { name: "Custom agent" },
+    deployment: {
+      ownership: "customer-managed",
+    },
+    connectivity: "disconnected",
+    executionState: "idle",
+    availability: "unavailable",
+    registeredAt: "Jul 11, 2026",
+    capabilityReport: {
+      status: "not-reported",
+      capabilities: [],
+      supportedOperations: [],
+    },
+    activity: [
+      {
+        id: "sync-activity-1",
+        type: "error",
+        summary: "No recent connectivity telemetry was reported",
+        occurredAt: "42 minutes ago",
+      },
+      {
+        id: "sync-activity-2",
+        type: "connectivity",
+        summary: "Last reported connection was disconnected",
+        occurredAt: "Yesterday",
+      },
+    ],
+    executions: [],
+    permissions: {
+      status: "not-reported",
+      overview: "Permission details have not been reported.",
+      grantedCapabilities: [],
+      restrictedOperations: [],
+    },
+  },
+  {
+    id: "agent-release-notes",
+    name: "Release Notes Coordinator",
+    initials: "RC",
+    responsibility: "Release note drafting and review preparation",
+    framework: { name: "CrewAI" },
+    model: { name: "GPT-4.1", provider: "OpenAI" },
+    deployment: {
+      environment: "Customer-managed container",
+      location: "US East",
+      ownership: "customer-managed",
+    },
+    connectivity: "connected",
+    executionState: "idle",
+    availability: "available",
+    lastHeartbeat: "6 minutes ago",
+    registeredAt: "Nov 4, 2026",
+    capabilityReport: {
+      status: "reported",
+      capabilities: ["Drafting", "Structured output"],
+      supportedOperations: ["Read assigned task context", "Submit task result"],
+      tools: ["Repository search"],
+    },
+    integrationMetadata: {
+      name: "Workspace bridge",
+      connectionMethod: "Customer-configured endpoint",
+    },
+    activity: [
+      {
+        id: "release-activity-1",
+        type: "execution",
+        summary: "Completed a release note outline",
+        occurredAt: "3 hours ago",
+      },
+      {
+        id: "release-activity-2",
+        type: "connectivity",
+        summary: "Heartbeat received",
+        occurredAt: "6 minutes ago",
+      },
+    ],
+    executions: [
+      {
+        id: "EXE-2029",
+        taskName: "Draft release note outline",
+        status: "completed",
+        duration: "14 min",
+      },
+    ],
+    usage: {
+      period: "Nov 1–18, 2026",
+      estimatedTokens: 94_000,
+      estimatedCost: 1.08,
+    },
+    permissions: {
+      status: "reported",
+      overview:
+        "Demonstration access is limited to assigned work and reported integration scopes.",
+      grantedCapabilities: ["Read assigned task context", "Submit task results"],
+      restrictedOperations: ["Publish release notes", "Change workspace settings"],
+    },
+  },
+];
